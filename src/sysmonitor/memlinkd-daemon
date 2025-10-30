@@ -1,0 +1,4 @@
+NAME=memlinkd
+RECOVER_COMMAND=/usr/bin/serviceRecover -n memlinkd -p /var/run/memlinkd.pid -s memlinkd.service
+MONITOR_COMMAND=/usr/bin/serviceStatusCheck -s memlinkd.service -b /usr/sbin/memlinkd -n memlinkd -p /var/run/memlinkd.pid
+STOP_COMMAND=service memlinkd stop
