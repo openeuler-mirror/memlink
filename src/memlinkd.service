@@ -1,0 +1,16 @@
+[Unit]
+Description=UVP memory overcommit policy daemon
+After=libvirtd.service
+
+[Service]
+Slice=system-uvp.slice
+OOMScoreAdjust=-1000
+Type=forking
+PIDFile=/run/memlinkd.pid
+ExecStart=/usr/sbin/memlinkd
+KillMode=process
+Restart=always
+RestartSec=30s
+
+[Install]
+WantedBy=multi-user.target
